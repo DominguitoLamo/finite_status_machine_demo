@@ -46,6 +46,10 @@ class SimpleLexer {
       }
     }
 
+    if (this.token && this.token.type !== DfaState.Initial) {
+      this.addToken()
+    }
+
     return new SimpleTokenReader(this.tokens);
   }
 
@@ -66,7 +70,7 @@ class SimpleLexer {
   }
 }
 
-class SimpleTokenReader {
+export class SimpleTokenReader {
 
   tokens:ReadonlyArray<SimpleToken>;
 

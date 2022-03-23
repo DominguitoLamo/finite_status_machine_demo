@@ -44,6 +44,12 @@ export function getState(state: DfaState, ch: string) {
     } else {
       return DfaState.Initial;
     }
+  } else if (state === DfaState.IntLiteral) {
+    if (isDigit(ch)) {
+      return DfaState.IntLiteral;
+    } else {
+      return DfaState.Initial;
+    }
   } else if (state === DfaState.GT) {
     if (ch == '=') {
       return DfaState.GE;

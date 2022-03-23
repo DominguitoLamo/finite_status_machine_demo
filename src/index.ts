@@ -1,6 +1,6 @@
-import { dumpTokenReader, tokenize } from "./lib/simpleLexer";
+import { dumpAST, token2AST } from "./lib/SimpleCalculator";
 
-const sentence = 'int age = 45';
-const tokens = tokenize(sentence);
-dumpTokenReader(tokens);
+const script = 'int a = 32 * ;';
+const node = token2AST(script);
+dumpAST(node, " ");
 
